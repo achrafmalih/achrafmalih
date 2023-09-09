@@ -1,0 +1,4 @@
+public class MyTile : RuleTile {
+    public string tileId;
+    public bool isWater;
+}
