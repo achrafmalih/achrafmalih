@@ -1,0 +1,18 @@
+paypal.Buttons({
+  onShippingChange(data, actions) {
+    // Reject non-US addresses
+    if (data.shipping_address.country_code !== 'US') {
+      return actions.reject();
+    }
+
+    // Patch the shipping amount
+    return fetch("/my-server/patch-paypal-order", {
+      method: "PATCH",
+      body: JSON.stringify(
+        {
+          shippingAddress: data.shipping_address 
+        })
+      })
+    .then((response) => response.json());
+  }
+}).render('#paypal-button-container');
