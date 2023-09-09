@@ -1,0 +1,36 @@
+<p id="error" class="hidden">Click the checkbox</p>
+<label><input id="check" type="checkbox" required> Click here to continue</label>
+
+<script>
+  paypal.Buttons({
+
+    // onInit is called when the button first renders
+    onInit(data, actions)  {
+
+      // Disable the buttons
+      actions.disable();
+
+      // Listen for changes to the checkbox
+      document.querySelector('#check')
+        .addEventListener('change', function(event) {
+
+          // Enable or disable the button when it is checked or unchecked
+          if (event.target.checked)  {
+            actions.enable();
+          } else  {
+            actions.disable();
+          }
+      });
+    },
+
+    // onClick is called when the button is clicked
+    onClick()  {
+
+      // Show a validation error if the checkbox is not checked
+      if (!document.querySelector('#check').checked) {
+        document.querySelector('#error').classList.remove('hidden');
+      }
+    }
+
+  }).render('#paypal-button-container');
+</script>
