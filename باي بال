@@ -1,0 +1,1 @@
+paypal.Buttons().render('#paypal-buttons-container');
