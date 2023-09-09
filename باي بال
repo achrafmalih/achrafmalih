@@ -1,0 +1,11 @@
+paypal.Buttons({
+  createSubscription(data, actions) {
+    return actions.subscription.create({
+      'plan_id': 'P-2UF78835G6983425GLSM44MA'
+    });
+  },
+
+  onApprove(data) {
+    alert('You have successfully created subscription ' + data.subscriptionID);
+  }
+}).render('#paypal-button-container');
