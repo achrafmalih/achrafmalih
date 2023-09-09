@@ -1,0 +1,8 @@
+<div id="paypal-button-container"></div>
+
+<script>
+   document.querySelector('#myRadioField')
+     .addEventListener('click', function() {
+       paypal.Buttons().render('#paypal-button-container')
+     });
+</script>
