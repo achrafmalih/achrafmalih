@@ -1,0 +1,26 @@
+paypal.HostedFields.render({
+  styles: {
+    'input': {
+      'font-size': '16pt',
+      'color': '#3A3A3A'
+    },
+    '.number': {
+      'font-family': 'monospace'
+    },
+    '.valid':  {
+      'color': 'green'
+    }
+  },
+  fields: {
+    number: {
+      selector: '#card-number'
+    },
+    cvv: {
+      selector: '#cvv',
+      placeholder: '•••'
+    },
+    expirationDate: {
+      selector: '#expiration-date'
+    }
+  }
+});
