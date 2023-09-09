@@ -1,0 +1,13 @@
+public class MyTile : RuleTile<MyTile.Neighbor> {
+    public int siblingGroup;
+    public class Neighbor : RuleTile.TilingRule.Neighbor {
+        public const int Sibing = 3;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        MyTile myTile = tile as MyTile;
+        switch (neighbor) {
+            case Neighbor.Sibing: return myTile && myTile.siblingGroup == siblingGroup;
+        }
+        return base.RuleMatch(neighbor, tile);
+    }
+}
