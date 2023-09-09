@@ -1,0 +1,1 @@
+paypal.rememberFunding([ paypal.FUNDING.VENMO ]);
