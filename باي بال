@@ -1,0 +1,19 @@
+paypal.Buttons({
+  createSubscription(data, actions) {
+    // updatedSubscription, status, and subscriptionId are defined by your code
+    if (updatedSubscription && (status === 'ACTIVE' || status === 'SUSPENDED')) {
+      // if subscription exists, revise it by chaning the plan id
+      return actions.subscription.revise(subscriptionId, {
+        "plan_id": "NEW_SUBSCRIPTION_PLAN_ID"
+      });
+    } else {
+      return actions.subscription.create({
+        'plan_id': 'P-2UF78835G6983425GLSM44MA'
+      });
+    }
+  },
+
+  onApprove(data) {
+    alert('You have successfully created subscription ' + data.subscriptionID);
+  }
+}).render('#paypal-button-container');
