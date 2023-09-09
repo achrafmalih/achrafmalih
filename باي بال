@@ -1,0 +1,5 @@
+paypal.Buttons({
+  onCancel(data) {
+    // Show a cancel page, or return to cart
+  }
+}).render('#paypal-button-container');
