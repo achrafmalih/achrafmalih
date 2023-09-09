@@ -1,0 +1,14 @@
+<div id="paypal-button-container"></div>
+
+<script>
+   document.querySelector('#paypal-button-container')
+     .style.display = 'none';
+
+   paypal.Buttons().render('#paypal-button-container');
+
+   document.querySelector('#myRadioField')
+     .addEventListener('click', function() {
+       document.querySelector('#paypal-button-container')
+         .style.display = 'block';
+     });
+</script>
