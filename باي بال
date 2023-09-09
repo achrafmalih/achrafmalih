@@ -1,0 +1,6 @@
+paypal.Buttons({
+  onError(err) {
+    // For example, redirect to a specific error page
+    window.location.href = "/your-error-page-here";
+  }
+}).render('#paypal-button-container');
