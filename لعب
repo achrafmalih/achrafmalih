@@ -1,0 +1,12 @@
+{
+  "projectInfo": [
+    {
+      "project": "projects/first-cloud-project",
+      "displayName": "First Cloud Project"
+    },
+    {
+      "project": "projects/second-cloud-project",
+      "displayName": "Second Cloud Project"
+    }
+  ]
+}
