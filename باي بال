@@ -1,0 +1,9 @@
+<div id="paypal-button-container" style="max-width:1000px;"></div>
+
+<script>
+  paypal.Buttons({
+  style: {
+    disableMaxWidth: true 
+  },
+}).render('#paypal-button-container');
+</script>
