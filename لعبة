@@ -1,0 +1,13 @@
+public class MyTile : RuleTile<MyTile.Neighbor> {
+    public class Neighbor {
+        public const int MyRule1 = 0;
+        public const int MyRule2 = 1;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        switch (neighbor) {
+            case Neighbor.MyRule1: return false;
+            case Neighbor.MyRule2: return true;
+        }
+        return true;
+    }
+}
