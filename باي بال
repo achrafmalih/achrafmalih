@@ -1,0 +1,15 @@
+// Loop over each funding source / payment method
+paypal.getFundingSources().forEach(function(fundingSource) {
+
+  // Initialize the marks
+  var mark = paypal.Marks({
+    fundingSource: fundingSource
+  });
+
+  // Check if the mark is eligible
+  if (mark.isEligible()) {
+
+    // Render the standalone mark for that funding source
+    mark.render('#paypal-mark-container');
+  }
+});
